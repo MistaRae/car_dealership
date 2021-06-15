@@ -1,6 +1,8 @@
 package Car;
 
-public class PetrolCar extends Car {
+import Car.components.IEngine;
+
+public class PetrolCar extends Car implements IEngine {
 
     private int fuelTank;
 

@@ -1,13 +1,21 @@
-import Car.Car;
+
+import Car.PetrolCar;
+import Car.components.IEngine;
+import Car.components.PetrolEngine;
 import org.junit.Before;
+import org.junit.Test;
 
-public class TestPetrolCar {
+import static org.junit.Assert.assertEquals;
 
-    private Car car;
+public class TestPetrolCar  {
+
+    private PetrolCar petrolcar;
+    private PetrolEngine petrolEngine;
 
     @Before
     public void setUp(){
-     car = new Car(1000, "red");
+        petrolEngine = new PetrolEngine(100, "Honda");
+        petrolcar = new PetrolCar(1000, "red", petrolEngine,200 );
     }
 
     @Test
