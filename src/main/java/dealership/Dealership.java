@@ -30,7 +30,8 @@ public class Dealership {
         this.stock.add(car);
     }
 
-    public void SellCar(Car car) {
+    public void sellCar(Car car) {
+        this.till += car.getPrice();
         this.stock.remove(car);
     }
 }
