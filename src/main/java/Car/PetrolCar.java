@@ -2,7 +2,7 @@ package Car;
 
 import Car.components.IEngine;
 
-public class PetrolCar extends Car implements IEngine {
+public class PetrolCar extends Car {
 
     private int fuelTank;
 
@@ -20,7 +20,6 @@ public class PetrolCar extends Car implements IEngine {
         this.fuelTank = fuelTank;
     }
 
-    @Override
     public String start() {
         return "I'm a Petrol engine and I have officially started!!";
     }

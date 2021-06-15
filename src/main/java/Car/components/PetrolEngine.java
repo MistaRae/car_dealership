@@ -26,8 +26,9 @@ public class PetrolEngine implements IEngine {
         this.manufacturer = manufacturer;
     }
 
+
     @Override
     public String start() {
-        return "i'm a Petrol Engine - cower before my V8";
+        return null;
     }
 }

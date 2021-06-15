@@ -1,6 +1,5 @@
 
 import Car.PetrolCar;
-import Car.components.IEngine;
 import Car.components.PetrolEngine;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,6 +31,11 @@ public class TestPetrolCar  {
     public void petrolCarHasColour(){
         assertEquals("red", petrolcar.getColour());
     }
+
+//    @Test
+//    public void petrolCarCanChangeColour(){
+//        assertEquals("blue", petrolcar.respray('blue'));
+//    }
 
     @Test
     public void petrolCarHasHorsePower(){
