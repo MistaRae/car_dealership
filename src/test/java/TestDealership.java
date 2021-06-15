@@ -57,4 +57,10 @@ public class TestDealership {
         assertEquals(0, ccClark.getTill());
     }
 
+    @Test
+    public void dealershipCanAddToStock(){
+        ccClark.addToStock(tesla);
+        assertEquals(1, ccClark.countStock());
+    }
+
 }

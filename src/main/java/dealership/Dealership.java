@@ -25,4 +25,8 @@ public class Dealership {
     public int countStock() {
         return stock.size();
     }
+
+    public void addToStock(Car car){
+        this.stock.add(car);
+    }
 }
