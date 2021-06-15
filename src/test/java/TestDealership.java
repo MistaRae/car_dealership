@@ -63,4 +63,11 @@ public class TestDealership {
         assertEquals(1, ccClark.countStock());
     }
 
+    @Test
+    public void dealershipCanRemoveFromstock(){
+        ccClark.addToStock(tesla);
+        ccClark.SellCar(tesla);
+        assertEquals(0, ccClark.countStock());
+    }
+
 }

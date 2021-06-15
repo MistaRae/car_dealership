@@ -29,4 +29,8 @@ public class Dealership {
     public void addToStock(Car car){
         this.stock.add(car);
     }
+
+    public void SellCar(Car car) {
+        this.stock.remove(car);
+    }
 }
