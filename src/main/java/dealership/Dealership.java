@@ -21,4 +21,8 @@ public class Dealership {
     public int getTill() {
         return till;
     }
+
+    public int countStock() {
+        return stock.size();
+    }
 }
