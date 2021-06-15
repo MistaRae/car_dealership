@@ -27,7 +27,8 @@ public class PetrolCar extends Car {
 
     @Override
     public void drive(int distance) {
-        this.fuelTank -= distance;
+        double economy = this.getGearboxEconomyFromEnum();
+        this.fuelTank -= distance * economy;
 
     }
 
