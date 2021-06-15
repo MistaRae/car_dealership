@@ -5,8 +5,8 @@ public class PetrolCar extends Car {
     private int fuelTank;
 
 
-    public PetrolCar(int Price, String colour, int fuelTank) {
-        super(Price, colour);
+    public PetrolCar(int price, String colour,IEngine petrolEngine, int fuelTank) {
+        super(price, colour, petrolEngine);
         this.fuelTank = fuelTank;
     }
 
@@ -17,4 +17,10 @@ public class PetrolCar extends Car {
     public void setFuelTank(int fuelTank) {
         this.fuelTank = fuelTank;
     }
+
+    @Override
+    public String start() {
+        return "I'm a Petrol engine and I have officially started!!";
+    }
+
 }

@@ -1,11 +1,14 @@
 package Car;
 
-public abstract class Car {
+import Car.components.IEngine;
+
+public abstract class Car implements IEngine {
 
     private int price;
     private String colour;
+    IEngine Engine;
 
-    public Car(int Price, String colour){
+    public Car(int price, String colour, IEngine Engine){
         this.price = price;
         this.colour = colour;
     }
