@@ -1,5 +1,6 @@
 import Car.ElectricCar;
 import Car.components.ElectricMotor;
+import Car.components.Gearbox;
 import Car.components.Tyre;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,6 +16,7 @@ public class TestElectricCar {
     private Tyre rearLeft;
     private Tyre rearRight;
 
+
     @Before
     public void setUp(){
         frontLeft = new Tyre(100);
@@ -22,7 +24,7 @@ public class TestElectricCar {
         rearLeft = new Tyre(100);
         rearRight = new Tyre(100);
         electricMotor = new ElectricMotor(150,"Tesla");
-        electricCar = new ElectricCar(10000, "blue", electricMotor,frontLeft, frontRight, rearLeft, rearRight,250);
+        electricCar = new ElectricCar(10000, "blue", electricMotor,Gearbox.AUTOMATIC, frontLeft, frontRight, rearLeft, rearRight,250);
     }
 
     @Test

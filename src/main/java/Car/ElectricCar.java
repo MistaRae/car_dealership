@@ -1,5 +1,6 @@
 package Car;
 
+import Car.components.Gearbox;
 import Car.components.IEngine;
 import Car.components.Tyre;
 
@@ -7,8 +8,8 @@ public class ElectricCar extends Car {
 
     private int battery;
 
-    public ElectricCar(int price, String colour, IEngine engine, Tyre frontLeft, Tyre frontRight, Tyre rearLeft, Tyre rearRight, int battery) {
-        super(price, colour, engine, frontLeft, frontRight, rearLeft, rearRight);
+    public ElectricCar(int price, String colour, IEngine engine, Gearbox gearbox, Tyre frontLeft, Tyre frontRight, Tyre rearLeft, Tyre rearRight, int battery) {
+        super(price, colour, engine, gearbox, frontLeft, frontRight, rearLeft, rearRight);
         this.battery = battery;
     }
 

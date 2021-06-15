@@ -1,5 +1,6 @@
 package Car;
 
+import Car.components.Gearbox;
 import Car.components.IEngine;
 import Car.components.Tyre;
 
@@ -10,16 +11,17 @@ public abstract class Car {
     private int price;
     private String colour;
     private IEngine engine;
-//    private ArrayList<Tyre> tyres;
     private Tyre frontLeft;
     private Tyre frontRight;
     private Tyre rearLeft;
     private Tyre rearRight;
+    private Gearbox gearbox;
 
-    public Car(int price, String colour, IEngine engine, Tyre frontLeft, Tyre frontRight, Tyre rearLeft, Tyre rearRight){
+    public Car(int price, String colour, IEngine engine, Gearbox gearbox, Tyre frontLeft, Tyre frontRight, Tyre rearLeft, Tyre rearRight){
         this.price = price;
         this.colour = colour;
         this.engine = engine;
+        this.gearbox = gearbox;
         this.frontLeft = frontLeft;
         this.frontRight = frontRight;
         this.rearLeft = rearLeft;

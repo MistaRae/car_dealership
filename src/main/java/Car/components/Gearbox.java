@@ -9,6 +9,9 @@ public enum Gearbox {
 
     Gearbox(double economy) {
         this.economy = economy;
+    }
 
+    public double getEconomy() {
+        return economy;
     }
 }
