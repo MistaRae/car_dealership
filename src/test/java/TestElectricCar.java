@@ -36,9 +36,12 @@ public class TestElectricCar {
         assertEquals(250,electricCar.getBattery());
     }
 
-//    @Test
-//    public void
-//
+    @Test
+    public void electricCarDrivingReducesBattery(){
+        electricCar.drive(50);
+        assertEquals(200, electricCar.getBattery());
+    }
+
 //    @Test
 //    public void
 //

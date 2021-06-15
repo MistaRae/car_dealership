@@ -4,23 +4,27 @@ import Car.components.IEngine;
 
 public class ElectricCar extends Car {
 
-    private int Battery;
+    private int battery;
 
     public ElectricCar(int price, String colour, IEngine Engine, int battery) {
         super(price, colour, Engine);
-        Battery = battery;
+        this.battery = battery;
     }
 
     public int getBattery() {
-        return Battery;
+        return battery;
     }
 
     public void setBattery(int battery) {
-        Battery = battery;
+        this.battery = battery;
     }
 
 
     public String start() {
         return "i'm an electric motor - hear me roar";
+    }
+
+    public void drive(int distance){
+        this.battery -= distance;
     }
 }
