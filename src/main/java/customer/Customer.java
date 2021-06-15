@@ -27,7 +27,14 @@ public class Customer {
     }
 
     public void buyCar(Car car) {
+        if (car.getPrice() > this.wallet) {
+            return;
+        } else
         this.wallet -= car.getPrice();
         ownedCars.add(car);
     }
+
+    public void setWallet(int newBalance) {
+        this.wallet = newBalance;
     }
+}
