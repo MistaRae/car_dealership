@@ -1,7 +1,9 @@
 import Car.Car;
 import Car.ElectricCar;
+import Car.PetrolCar;
 import Car.components.ElectricMotor;
 import Car.components.Gearbox;
+import Car.components.PetrolEngine;
 import Car.components.Tyre;
 import customer.Customer;
 import org.junit.Before;
@@ -16,7 +18,9 @@ public class TestCustomer {
     private Customer mark;
     private ArrayList<Car> ownedCars;
     private ElectricCar tesla;
+    private PetrolCar mercedes;
     private ElectricMotor electricMotor;
+    private PetrolEngine petrolEngine;
     private Tyre frontLeft;
     private Tyre frontRight;
     private Tyre rearLeft;
@@ -31,7 +35,8 @@ public class TestCustomer {
         rearRight = new Tyre(100);
         electricMotor = new ElectricMotor(150,"Tesla");
         tesla = new ElectricCar(10000, "blue", electricMotor, Gearbox.AUTOMATIC, frontLeft, frontRight, rearLeft, rearRight,250);
-
+        petrolEngine = new PetrolEngine(150, "Mercedes");
+        mercedes = new PetrolCar(1000, "white", petrolEngine, Gearbox.AUTOMATIC, frontLeft, frontRight, rearLeft, rearRight,200);
         ownedCars = new ArrayList<>();
         mark = new Customer(ownedCars, 11000);
     }
@@ -50,6 +55,12 @@ public class TestCustomer {
     public void customerCanAddToCollection(){
         mark.buyCar(tesla);
         assertEquals(1, mark.countOwnedCars());
+    }
+    @Test
+    public void customerCanAddPetrolCarToCollection(){
+        mark.buyCar(tesla);
+        mark.buyCar(mercedes);
+        assertEquals(2, mark.countOwnedCars());
     }
 
 
