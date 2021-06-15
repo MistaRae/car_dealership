@@ -74,4 +74,8 @@ public abstract class Car {
             this.erodeTyreLeft();
         } else this.erodeTyreRight();
     }
+
+    public double getGearboxEconomyFromEnum() {
+        return gearbox.getEconomy();
+    }
 }

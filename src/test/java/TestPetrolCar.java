@@ -1,5 +1,6 @@
 
 import Car.PetrolCar;
+import Car.components.Gearbox;
 import Car.components.PetrolEngine;
 import Car.components.Tyre;
 import org.junit.Before;
@@ -24,7 +25,7 @@ public class TestPetrolCar  {
         rearLeft = new Tyre(100);
         rearRight = new Tyre(100);
         petrolEngine = new PetrolEngine(100, "Honda");
-        petrolcar = new PetrolCar(1000, "red", petrolEngine,frontLeft, frontRight, rearLeft, rearRight,200);
+        petrolcar = new PetrolCar(1000, "red", petrolEngine, Gearbox.MANUAL, frontLeft, frontRight, rearLeft, rearRight,200);
     }
 
     @Test

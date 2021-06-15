@@ -50,7 +50,7 @@ public class TestElectricCar {
     @Test
     public void electricCarDrivingReducesBattery(){
         electricCar.drive(50);
-        assertEquals(200, electricCar.getBattery());
+        assertEquals(210, electricCar.getBattery());
     }
 
     @Test

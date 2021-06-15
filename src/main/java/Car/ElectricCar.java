@@ -23,7 +23,8 @@ public class ElectricCar extends Car {
 
     @Override
     public void drive(int distance){
-        this.battery -= distance;
+        double economy = this.getGearboxEconomyFromEnum();
+        this.battery -= distance * economy;
         this.erodeTyres(distance);
     }
 

@@ -3,7 +3,7 @@ package Car.components;
 public enum Gearbox {
 
     MANUAL(1.00),
-    AUTOMATIC(2.25);
+    AUTOMATIC(0.8);
 
     private final double economy;
 
