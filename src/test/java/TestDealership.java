@@ -52,4 +52,9 @@ public class TestDealership {
         assertEquals(0,ccClark.countStock());
     }
 
+    @Test
+    public void dealershipStartsWithEmptyTill(){
+        assertEquals(0, ccClark.getTill());
+    }
+
 }
