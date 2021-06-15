@@ -1,5 +1,6 @@
 import Car.ElectricCar;
 import Car.components.ElectricMotor;
+import Car.components.Tyre;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,11 +10,19 @@ public class TestElectricCar {
 
     private ElectricCar electricCar;
     private ElectricMotor electricMotor;
+    private Tyre frontLeft;
+    private Tyre frontRight;
+    private Tyre rearLeft;
+    private Tyre rearRight;
 
     @Before
     public void setUp(){
+        frontLeft = new Tyre(100);
+        frontRight = new Tyre(100);
+        rearLeft = new Tyre(100);
+        rearRight = new Tyre(100);
         electricMotor = new ElectricMotor(150,"Tesla");
-        electricCar = new ElectricCar(10000, "blue", electricMotor,250);
+        electricCar = new ElectricCar(10000, "blue", electricMotor,frontLeft, frontRight, rearLeft, rearRight,250);
     }
 
     @Test
@@ -42,7 +51,46 @@ public class TestElectricCar {
         assertEquals(200, electricCar.getBattery());
     }
 
-//    @Test
-//    public void
-//
+    @Test
+    public void drivingWearsOutTyres(){
+        electricCar.drive(99);
+        assertEquals(1, electricCar.getTyreLife(frontLeft));
+    }
+
+    @Test
+    public void drivingWearsOutFrontLeft(){
+        electricCar.drive(99);
+        assertEquals(1, electricCar.getTyreLife(frontLeft));
+    }
+
+    @Test
+    public void drivingWearsOutFrontRight(){
+        electricCar.drive(99);
+        assertEquals(1, electricCar.getTyreLife(frontRight));
+    }
+
+    @Test
+    public void drivingWearsOutRearLeft(){
+        electricCar.drive(99);
+        assertEquals(1, electricCar.getTyreLife(rearLeft));
+    }
+
+    @Test
+    public void drivingWearsOutRearRight(){
+        electricCar.drive(99);
+        assertEquals(1, electricCar.getTyreLife(rearRight));
+    }
+
+    @Test
+    public void turningLeftwearsFrontLeftTyre(){
+        electricCar.turn("left");
+        assertEquals(99, electricCar.getTyreLife(frontLeft));
+    }
+
+    @Test
+    public void turningRightwearsFrontRightTyre(){
+        electricCar.turn("right");
+        assertEquals(99, electricCar.getTyreLife(frontRight));
+    }
+
 }
