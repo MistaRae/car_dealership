@@ -82,7 +82,43 @@ public class TestDealership {
         ccClark.addToStock(tesla);
         ccClark.sellCar(tesla, mark);
         assertEquals(1, mark.countOwnedCars());
+        assertEquals(1000, mark.getWallet());
+        assertEquals(0, ccClark.countStock());
+        assertEquals(10000, ccClark.getTill());
     }
+
+    @Test
+    public void dealershipCanBuyCars(){
+        ccClark.addToTill(1000);
+        ccClark.buyCar(mercedes);
+        assertEquals(1, ccClark.countStock());
+    }
+
+    @Test
+    public void dealershipBuyingCarReducesTill(){
+        ccClark.addToTill(1000);
+        ccClark.buyCar(mercedes);
+        assertEquals(0, ccClark.getTill());
+    }
+
+    @Test
+    public void dealershipCantBuyCarItCantAfford(){
+        ccClark.buyCar(mercedes);
+        assertEquals(0, ccClark.countStock());
+    }
+
+    @Test
+    public void dealershipCanBuyCarsFromCustomers(){
+        ccClark.sellCar(tesla,mark);
+        ccClark.buyCarFromCustomer(tesla,mark);
+        assertEquals(1, ccClark.countStock());
+        assertEquals(11000, mark.getWallet());
+        assertEquals(0, mark.countOwnedCars());
+        assertEquals(0, ccClark.getTill());
+
+    }
+
+
 
 
 }

@@ -37,4 +37,24 @@ public class Dealership {
         customer.buyCar(car);
 
     }
+
+    public void buyCar(Car car) {
+        if (this.till >= car.getPrice()){
+        this.till -= car.getPrice();
+        this.stock.add(car);
+        } else return;
+
+    }
+
+    public void addToTill(int income) {
+        this.till += income;
+    }
+
+    public void buyCarFromCustomer(Car car, Customer customer) {
+        if (this.till >= car.getPrice()){
+            this.till -= car.getPrice();
+            customer.sellCar(car);
+            this.stock.add(car);
+        } else return;
+    }
 }

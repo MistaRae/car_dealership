@@ -1,6 +1,7 @@
 package customer;
 
 import Car.Car;
+import dealership.Dealership;
 
 import java.util.ArrayList;
 
@@ -36,5 +37,10 @@ public class Customer {
 
     public void setWallet(int newBalance) {
         this.wallet = newBalance;
+    }
+
+    public void sellCar(Car car) {
+        this.wallet += car.getPrice();
+        this.ownedCars.remove(car);
     }
 }
