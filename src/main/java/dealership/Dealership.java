@@ -1,6 +1,7 @@
 package dealership;
 
 import Car.Car;
+import customer.Customer;
 
 import java.util.ArrayList;
 
@@ -30,8 +31,10 @@ public class Dealership {
         this.stock.add(car);
     }
 
-    public void sellCar(Car car) {
+    public void sellCar(Car car, Customer customer ) {
         this.till += car.getPrice();
         this.stock.remove(car);
+        customer.buyCar(car);
+
     }
 }
