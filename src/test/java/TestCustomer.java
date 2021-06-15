@@ -63,5 +63,11 @@ public class TestCustomer {
         assertEquals(2, mark.countOwnedCars());
     }
 
+    @Test
+    public void buyingCarReducesWallet(){
+        mark.buyCar(tesla);
+        assertEquals(1000, mark.getWallet());
+    }
+
 
 }

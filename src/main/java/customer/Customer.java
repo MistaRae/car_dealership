@@ -27,6 +27,7 @@ public class Customer {
     }
 
     public void buyCar(Car car) {
+        this.wallet -= car.getPrice();
         ownedCars.add(car);
     }
     }
